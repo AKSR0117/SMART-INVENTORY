@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Inventory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css', v='reference-home-v3') }}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="ledger-header">
+
+        <div class="brand">
+            <div class="brand-mark">SI</div>
+
+            <div>
+                <h1>{{ user_name }}</h1>
+                <div class="date" id="todayDate"></div>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button class="notification-btn" id="notificationBtn" title="Alerts and Notifications">
+                🔔
+                <span class="notification-badge" id="notificationBadge" style="display: none;">0</span>
+            </button>
+        </div>
+
+    </div>
+
+    <main id="mainContent"></main>
+
+    <div class="tab-bar">
+
+        <button class="tab-btn active" data-tab="home">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">Home</span>
+        </button>
+
+        <button class="tab-btn" data-tab="inventory">
+            <span class="tab-icon">📦</span>
+            <span class="tab-label">Inventory</span>
+        </button>
+
+        <button class="tab-btn" data-tab="dashboard">
+            <span class="tab-icon">📊</span>
+            <span class="tab-label">Dashboard</span>
+        </button>
+
+        <button class="tab-btn" data-tab="profile">
+            <span class="tab-icon">👤</span>
+            <span class="tab-label">Profile</span>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast-root" id="toastRoot"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

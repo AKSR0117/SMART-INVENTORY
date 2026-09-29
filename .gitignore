@@ -1,0 +1,18 @@
+flask-app copy 2/vendorx/camera.log
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+
+# Local duplicate dataset
+/vendorx_8_products_dataset/
+
+# ML cache
+**/train.cache
+
+# Logs
+*.log
+
+# Generated YOLO outputs
+**/runs/
